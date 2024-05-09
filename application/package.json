@@ -8,7 +8,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "electron": "ng build && electron ."
+    "electron": "nodemon --exec electron ."
   },
   "private": true,
   "dependencies": {
@@ -20,9 +20,21 @@
     "@angular/platform-browser": "^17.3.0",
     "@angular/platform-browser-dynamic": "^17.3.0",
     "@angular/router": "^17.3.0",
+    "@ngx-translate/core": "^15.0.0",
+    "@ngx-translate/http-loader": "^8.0.0",
+    "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
+    "boxicons": "^2.1.4",
+    "custom-electron-titlebar": "^4.2.8",
+    "discord-rpc": "^4.0.1",
+    "dotenv": "^16.4.5",
     "electron-store": "^9.0.0",
+    "lucide-angular": "^0.378.0",
+    "ngx-ui-loader": "^13.0.0",
+    "primeng": "^15.4.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
+    "youtube-music-api": "^1.0.6",
     "zone.js": "~0.14.3"
   },
   "devDependencies": {
@@ -37,6 +49,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "nodemon": "^3.1.0",
     "typescript": "~5.4.2"
   }
 }

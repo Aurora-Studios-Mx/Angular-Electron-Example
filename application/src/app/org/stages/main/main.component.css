@@ -1,0 +1,13 @@
+.flex-item {
+    flex: 0 0 calc(49%);
+    cursor: pointer;
+}
+
+.flex-item > .card{
+    background-color: #2c2c2c;
+    transition: all .3s;
+}
+
+.flex-item > .card:hover {
+    background-color: #3a3a3a;
+}

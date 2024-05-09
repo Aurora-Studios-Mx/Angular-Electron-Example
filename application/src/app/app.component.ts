@@ -1,11 +1,16 @@
 import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { SignalsService } from './org/shared/services/signals.service';
+import { SliderComponent } from './org/shared/components/slider/slider.component';
+import { NavbarComponent } from './org/shared/components/navbar/navbar.component';
+import { PlayerComponent } from './org/shared/components/player/player.component';
+import { TranslateService } from '@ngx-translate/core';
+import { NgxUiLoaderModule } from 'ngx-ui-loader';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, SliderComponent, NavbarComponent, PlayerComponent, NgxUiLoaderModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -13,7 +18,12 @@ export class AppComponent implements OnInit, OnDestroy{
   pong: boolean = false;
   title = 'application';
 
-  constructor(private ipcService: SignalsService, private cdRef: ChangeDetectorRef) {}
+  constructor(private ipcService: SignalsService, private cdRef: ChangeDetectorRef, private rt: Router, protected translate: TranslateService) {
+    translate.setDefaultLang('en');
+    translate.use('en');
+
+    translate.addLangs(['en','es'])
+  }
 
   ping = () => {
     console.log("ping");
@@ -26,7 +36,7 @@ export class AppComponent implements OnInit, OnDestroy{
   }
 
   ngOnInit(): void {
-      
+    // this.rt.navigateByUrl('/search/tilin')
   }
 
   ngOnDestroy(): void {

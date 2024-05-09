@@ -1,0 +1,37 @@
+<div class="container-fluid d-flex align-items-center w-100 h-100">
+    <div class="row w-100">
+        <div class="col-3 d-flex gap-3 align-items-center">
+            <img class="rounded-2" src="https://yt3.googleusercontent.com/aQQf-5W5K1vttSm0Ky6LMYP55-Kb2PZsA2KMNFaaJGJhvQ53JNGs321prndBDlraOYy1ytMmuQ=s1200" style="width: auto; height: 56px;"/>
+            <div class="row text-truncate">
+                <div class="col">
+                    <p class="mb-0 text-truncate" style="color: white; font-weight: 300; font-size: 14px;">PA' ROMPERLA</p>
+                    <p class="mb-0 text-white-50 text-truncate" style="font-size: 12px; font-weight: 200;">Bad Bunny, Don Omar</p>
+                </div>
+            </div>
+        </div>
+        <div class="col d-flex align-items-center flex-column">
+            <div class="d-flex align-items-baseline gap-3">
+                <a class="text-decoration-none text-player style-btn-2">
+                    <i class="bi bi-skip-start-fill fs-4"></i>
+                </a>
+                <a class="text-decoration-none text-player style-btn">
+                    <i class="bi bi-play-fill fs-4 ms-1"></i>
+                </a>
+                <a class="text-decoration-none text-player style-btn-2">
+                    <i class="bi bi-skip-end-fill fs-4"></i>
+                </a>
+            </div>
+        </div>
+        <div class="col-auto d-flex align-items-center gap-3">
+            <div class="d-flex gap-2 align-items-center">
+                <a class="text-decoration-none text-dark-emphasis" (click)="volumeValue === 0">
+                    <i class="bi bi-volume-up fs-4"></i>
+                </a>
+                <p-slider [(ngModel)]="volumeValue" [style]="{width: '100px'}"></p-slider>
+            </div>
+            <a href="" class="text-decoration-none text-dark-emphasis">
+                <i class="bi bi-arrows-angle-expand"></i>
+            </a>
+        </div>
+    </div>
+</div>

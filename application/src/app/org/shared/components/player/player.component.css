@@ -1,0 +1,27 @@
+
+.style-btn{
+    cursor: pointer;
+    background-color: #121212;
+    padding: 1px 5px;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.style-btn:hover{
+    color: #fff;
+    border-radius: 50%;
+}
+
+.style-btn-2 {
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.style-btn-2:hover {
+    color: #fff;
+    border-radius: 50%;
+}
+
+.text-player{
+    color: #b2b2b2;
+}

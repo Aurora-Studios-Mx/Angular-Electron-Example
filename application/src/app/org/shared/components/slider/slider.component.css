@@ -1,0 +1,9 @@
+.nav-item {
+    color: rgba(255, 255, 255, .5);
+    transition: all .3s ease-in-out;
+}
+
+.nav-item:hover {
+    cursor: pointer;
+    color: rgba(255, 255, 255, 1);
+}

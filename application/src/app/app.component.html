@@ -1,6 +1,22 @@
-<div class="test-container">
+<!-- <div class="test-container">
   <button (click)="ping()" class="ping">PING</button>
   @if (pong) {
     <div class="pong">PONG!</div>
   }
+</div> -->
+<ngx-ui-loader [overlayColor]="'rgb(0,0,0,0.5)'" [fgsType]="'rectangle-bounce-party'" [fgsColor]="'rgba(0, 0, 0, 0)'" [pbColor]="'rgba(232, 44, 44, 1)'"></ngx-ui-loader>
+
+<div class="position-fixed w-100 user-select-none" style="height: 82%;">
+  <div class="row w-100 h-100">
+    <div class="col-auto pe-2 d-flex justify-content-center h-100">
+      <app-slider/>
+    </div>
+    <div class="col p-0">
+      <app-navbar class="position-fixed z-1 mt-2" style="width: 92.5%;"/>
+      <router-outlet class="z-0"/>
+    </div>
+  </div>
+  <div>
+    <app-player class="position-fixed" style="width: 100%; height: 12%; "/>
+  </div>
 </div>

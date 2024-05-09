@@ -1,0 +1,29 @@
+.btn-nav {
+    background-color: rgba(0, 0, 0, .5);
+    color: white;
+    border-radius: 50%;
+    padding: 5px 9px;
+}
+
+.btn-nav:disabled{
+    background-color: rgba(56, 56, 56, 0.5);
+    color: white;
+    border-radius: 50%;
+    padding: 5px 9px;
+    border: 0;
+}
+
+.form-control{
+    background-color: rgba(0, 0, 0, .5);
+    border-color: rgba(0, 0, 0, .5);
+    color: white;
+    font-size: 14px;
+}
+.form-control::placeholder{
+    color: rgba(255, 255, 255, .4);
+    transition: all .3s ease-in-out;
+    font-size: 14px;
+}
+.form-control:focus::placeholder{
+    color: rgba(255, 255, 255, .8);
+}

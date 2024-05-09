@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-sm">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav me-auto mt-2 mt-lg-0 gap-2">
+                <li class="nav-item">
+                    <button type="button" class="btn btn-nav" (click)="goBack()">
+                        <i class="bi bi-chevron-left"></i>
+                    </button>
+
+                </li>
+                <li class="nav-item">
+                    <button type="button" class="btn btn-nav" (click)="goForward()">
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
+                </li>
+            </ul>
+            <form class="d-flex align-items-center w-25" role="search" (ngSubmit)="onSubmit()">
+                <input class="form-control me-2 rounded-4" type="search" placeholder="{{'navbar.search_nav' | translate}}" style="height: 35px;" [(ngModel)]="query" [ngModelOptions]="{standalone: true}">
+            </form>
+            <button type="button" [pTooltip]="'navbar.trans_btn' | translate" (click)="changeLang()" class="btn btn-nav">
+                <i class="bi bi-translate"></i>
+            </button>
+        </div>
+    </div>
+</nav>
