@@ -4,6 +4,20 @@
 @import "../node_modules/primeng/resources/themes/lara-dark-blue/theme.css";
 @import "../node_modules/primeng/resources/primeng.css";
 
+@font-face {
+    font-family: 'CircularStd';
+    src: url('./assets/typography/CircularStd-Book.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CircularStd-bold';
+    src: url('./assets/typography/CircularStd-Medium.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html,
 body {
     font-family: "Inter var", sans-serif;
@@ -11,6 +25,10 @@ body {
     margin: 0;
     height: 100%;
     background-color: black;
+}
+
+.mat-card {
+    background-color: transparent !important;
 }
 
 .dropped-shadow {
@@ -29,7 +47,7 @@ body {
 }
 
 ::selection {
-    background-color: #991433;
+    background-color: rgb(63, 63, 63);
     color: white;
 }
 
@@ -38,16 +56,25 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-    background: #fff;
+    background: black;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #991433;
-    /* border-radius: 20px; */
-    border: 3px solid #fff;
+    background: rgb(63, 63, 63);
+    border-radius: 20px;
+    border: 4px solid black;
 }
 
 /*Fonts*/
+
+.circular {
+    font-family: 'CircularStd', sans-serif;
+}
+
+.circular-bold {
+    font-family: 'CircularStd-bold', sans-serif;
+}
+
 .poppins-thin {
     font-family: "Poppins", sans-serif;
     font-weight: 100;

@@ -1,15 +1,14 @@
 
 .style-btn{
     cursor: pointer;
-    background-color: #121212;
-    padding: 1px 5px;
+    background-color: #ffffff;
+    padding: 1px 6.5px;
     border-radius: 50%;
     transition: all 0.3s;
 }
 
 .style-btn:hover{
-    color: #fff;
-    border-radius: 50%;
+    transform: scale(1.1);
 }
 
 .style-btn-2 {

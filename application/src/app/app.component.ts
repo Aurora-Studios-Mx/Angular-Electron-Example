@@ -19,10 +19,8 @@ export class AppComponent implements OnInit, OnDestroy{
   title = 'application';
 
   constructor(private ipcService: SignalsService, private cdRef: ChangeDetectorRef, private rt: Router, protected translate: TranslateService) {
+    translate.addLangs(['en', 'es'])
     translate.setDefaultLang('en');
-    translate.use('en');
-
-    translate.addLangs(['en','es'])
   }
 
   ping = () => {
@@ -36,10 +34,11 @@ export class AppComponent implements OnInit, OnDestroy{
   }
 
   ngOnInit(): void {
-    // this.rt.navigateByUrl('/search/tilin')
+    // this.rt.navigateByUrl("/search/felicilandia")
   }
 
   ngOnDestroy(): void {
     this.ipcService.removeAllListeners("reply");
+    this.ipcService.removeAllListeners("configuration:reply");
   }
 }

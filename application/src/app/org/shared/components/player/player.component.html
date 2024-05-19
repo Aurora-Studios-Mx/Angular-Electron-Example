@@ -1,6 +1,6 @@
 <div class="container-fluid d-flex align-items-center w-100 h-100">
     <div class="row w-100">
-        <div class="col-3 d-flex gap-3 align-items-center">
+        <div class="col-2 d-flex gap-3 align-items-center">
             <img class="rounded-2" src="https://yt3.googleusercontent.com/aQQf-5W5K1vttSm0Ky6LMYP55-Kb2PZsA2KMNFaaJGJhvQ53JNGs321prndBDlraOYy1ytMmuQ=s1200" style="width: auto; height: 56px;"/>
             <div class="row text-truncate">
                 <div class="col">
@@ -9,17 +9,32 @@
                 </div>
             </div>
         </div>
-        <div class="col d-flex align-items-center flex-column">
+        <div class="col d-flex align-items-center justify-content-center p-0 w-100">
+            <ngx-audio-player [autoPlay]="false" muted="muted" class="w-100 mt-1" [playlist]="msaapPlaylist"
+                [disablePositionSlider]="msaapDisablePositionSlider" [displayRepeatControls]="msaapDisplayRepeatControls"
+                [displayVolumeControls]="msaapDisplayVolumeControls" [displayVolumeSlider]="msaapDisplayVolumeSlider"
+                [displayTitle]="msaapDisplayTitle" [displayPlaylist]="msaapDisplayPlayList"
+                [expanded]="true" (trackPlaying)="onTrackPlaying($event)" (trackPaused)="onTrackPaused($event)"
+                (trackEnded)="onEnded($event)" (nextTrackRequested)="onNextTrackRequested($event)"
+                (previousTrackRequested)="onPreviousTrackRequested($event)" (trackSelected)="onTrackSelected($event)">
+            </ngx-audio-player>
+        </div>
+        <!-- <div class="col d-flex align-items-center flex-column gap-1">
             <div class="d-flex align-items-baseline gap-3">
                 <a class="text-decoration-none text-player style-btn-2">
                     <i class="bi bi-skip-start-fill fs-4"></i>
                 </a>
-                <a class="text-decoration-none text-player style-btn">
-                    <i class="bi bi-play-fill fs-4 ms-1"></i>
+                <a class="text-decoration-none text-black style-btn">
+                    <i class="bi bi-play-fill fs-4"></i>
                 </a>
                 <a class="text-decoration-none text-player style-btn-2">
                     <i class="bi bi-skip-end-fill fs-4"></i>
                 </a>
+            </div>
+            <div class="d-flex gap-3 align-items-center justify-content-center w-100">
+                <p class="text-white m-0 circular" style="font-size: 12px;">0:00</p>
+                <p-slider [(ngModel)]="currentTime" [style]="{width: '450px'}"></p-slider>
+                <p class="text-white m-0 circular" style="font-size: 12px;">0:00</p>
             </div>
         </div>
         <div class="col-auto d-flex align-items-center gap-3">
@@ -32,6 +47,6 @@
             <a href="" class="text-decoration-none text-dark-emphasis">
                 <i class="bi bi-arrows-angle-expand"></i>
             </a>
-        </div>
+        </div> -->
     </div>
 </div>

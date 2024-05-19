@@ -1,8 +1,14 @@
 const { app, ipcMain, BrowserWindow, Menu } = require("electron");
 const { setupTitlebar, attachTitlebarToWindow } = require('custom-electron-titlebar/main')
+const fs = require('fs')
 const path = require('path')
 const DiscordRPC = require('discord-rpc')
 const YoutubeMusicApi = require('youtube-music-api')
+
+//Storage data
+const os = require('os');
+const storage = require('electron-json-storage');
+storage.setDataPath(path.join(os.homedir(), 'Aurora', 'Aurora-Music', 'ApplicationData'));
 
 require('dotenv').config({ path: path.resolve(__dirname, '.env') })
 
@@ -47,7 +53,45 @@ createWindow = () => {
     });
 }
 
-app.on("ready", createWindow);
+function generateNewConfigurationJSON(){
+
+    const downloadsDir = fs.existsSync(path.join(os.homedir(), 'Aurora', 'Aurora-Music', 'OfflineData'))
+
+    if(downloadsDir === false){
+        fs.mkdir(path.join(os.homedir(), 'Aurora', 'Aurora-Music', 'OfflineData'), { recursive: true }, (err) => {
+            if (err) throw err;
+        });
+    }
+
+    storage.get('configuration', (error, data) => {
+        if (error) throw error;
+
+        const stringify = JSON.stringify(data)
+
+        if(stringify === '{}'){
+            const data = {
+                init: true,
+                downloadsDir: path.join(os.homedir(), 'Aurora', 'Aurora-Music', 'OfflineData')
+            }
+
+            storage.set('configuration', data, function(err) {
+                if(err) throw err;
+            })
+
+            console.log("First time opening the app, generating new configuration file...");
+
+        }
+        else{
+            console.log("Configuration file already exists, skipping generation...");
+        }
+    });
+}
+
+app.on("ready", () =>{    
+    generateNewConfigurationJSON();
+
+    createWindow();
+});
 
 app.on("window-all-closed", () => {
     if (process.platform !== "darwin") {
@@ -120,7 +164,7 @@ ipcMain.on("discord", (event, args) => {
 
 ipcMain.on("youtube", (event, args) => {
     if (args[0].method == "search") {
-        api.search(args[0].query, "playlist").then(result => {
+        api.search(args[0].query, "song").then(result => {
             if (result) {
                 setTimeout(() => {
                     event.reply("youtube:reply", [{ result: true, data: result }]);

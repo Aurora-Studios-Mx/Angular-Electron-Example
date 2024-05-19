@@ -1,6 +1,29 @@
 {
     "navbar":{
         "search_nav": "Search in YouTube",
-        "trans_btn": "Change to Spanish (México)"
+        "trans_btn": "Change to Spanish (México)",
+        "back": "Back",
+        "forward": "Forward",
+        "changelang": "When you change the language, the app restarts. Do you want to continue?"
+    },
+    "home": {
+        "title": {
+            "version_1": "Good morning",
+            "version_2": "Good afternoon",
+            "version_3": "Good evening"
+        },
+        "subtitle": "What music will we listen to today?"
+    },
+    "search": {
+        "title": "Result for",
+        "subtitle": "Results may vary due to connection with YouTube.",
+        "loader": {
+            "title": "Searching...",
+            "subtitle": "Wait times vary depending on your internet connection."
+        },
+        "error_message": {
+            "title" : "A occurred an error while searching",
+            "subtitle": "Try to research again or try later."
+        }
     }
 }

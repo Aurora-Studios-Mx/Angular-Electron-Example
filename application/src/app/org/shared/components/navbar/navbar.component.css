@@ -25,5 +25,5 @@
     font-size: 14px;
 }
 .form-control:focus::placeholder{
-    color: rgba(255, 255, 255, .8);
+    color: rgba(255, 255, 255, .7);
 }

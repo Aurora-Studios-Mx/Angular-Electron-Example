@@ -3,13 +3,13 @@
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav me-auto mt-2 mt-lg-0 gap-2">
                 <li class="nav-item">
-                    <button type="button" class="btn btn-nav" (click)="goBack()">
+                    <button type="button" class="btn btn-nav" [pTooltip]="'navbar.back' | translate" (click)="goBack()">
                         <i class="bi bi-chevron-left"></i>
                     </button>
 
                 </li>
                 <li class="nav-item">
-                    <button type="button" class="btn btn-nav" (click)="goForward()">
+                    <button type="button" class="btn btn-nav" [pTooltip]="'navbar.forward' | translate" (click)="goForward()">
                         <i class="bi bi-chevron-right"></i>
                     </button>
                 </li>

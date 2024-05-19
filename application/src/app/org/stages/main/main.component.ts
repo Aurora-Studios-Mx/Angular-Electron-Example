@@ -1,28 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { SignalsService } from '../../shared/services/signals.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-main',
   standalone: true,
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './main.component.html',
   styleUrl: './main.component.css'
 })
 export class MainComponent implements OnInit{
   private date: number = new Date().getHours();
-  protected greetingMessage: string | undefined;
+  protected greetingMessage: string = '';
 
   constructor(private _ipc: SignalsService) {}
 
   generateNewMessage(): void{
     if(this.date < 12){
-      this.greetingMessage = "Good Morning";
+      this.greetingMessage = "home.title.version_1";
     }
     else if(this.date >= 12 && this.date < 17){
-      this.greetingMessage = "Good Afternoon";
+      this.greetingMessage = "home.title.version_2";
     }
     else{
-      this.greetingMessage = "Good Evening";
+      this.greetingMessage = "home.title.version_3";
     }
   }
 

@@ -1,6 +1,29 @@
 {
     "navbar": {
         "search_nav": "Busca en YouTube",
-        "trans_btn": "Cambiar a inglés"
+        "trans_btn": "Cambiar a inglés",
+        "back": "Atras",
+        "forward": "Adelante",
+        "changelang": "Al cambiar el idioma, se reinicia la app ¿Quieres continuar?"
+    },
+    "home": {
+        "title": {
+            "version_1": "Buenos dias",
+            "version_2": "Buenas tardes",
+            "version_3": "Buenas noches"
+        },
+        "subtitle": "Que música quieres escuchar hoy?"
+    },
+    "search": {
+        "title": "Resultados para",
+        "subtitle": "Los resultados pueden variar debido a la conexión con YouTube.",
+        "loader": {
+            "title": "Realizando búsqueda...",
+            "subtitle": "Los tiempos de espera varían según tu conexión a internet."
+        },
+        "error_message": {
+            "title": "Ha ocurrido un error mientras buscábamos.",
+            "subtitle": "Intenta hacer nuevamente la búsqueda o prueba mas tarde."
+        }
     }
 }
