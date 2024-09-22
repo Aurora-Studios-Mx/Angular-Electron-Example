@@ -15,7 +15,15 @@
                             <div class="card border-0 rounded-2 overflow-hidden">
                                 <div class="row ps-2 pe-3">
                                     <div class="col-auto p-0">
-                                        <img src="{{item.thumbnails[1].url}}" style="width: auto; height: 64px; object-fit: cover;" />
+                                        @defer {
+                                            <img src="{{item.thumbnails[1].url}}" style="width: auto; height: 64px; object-fit: cover;" />
+                                        }
+                                        @loading (after 100ms; minimum 1s) {
+                                            <div class="d-flex justify-content-center align-items-center">
+                                                <div class="spinner-border text-white spinner-border-sm" role="status"></div>
+                                            </div>
+                                            
+                                        }
                                     </div>
                                     <div class="col d-flex align-items-center">
                                         <div class="row">

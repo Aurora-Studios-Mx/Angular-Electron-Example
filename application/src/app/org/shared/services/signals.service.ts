@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, NgZone } from '@angular/core';
 import { ipcRenderer } from 'electron';
 
 @Injectable({
@@ -8,7 +8,7 @@ export class SignalsService {
 
   private ipc!: typeof ipcRenderer;
 
-  constructor() {
+  constructor(private ngZone: NgZone) {
     try{
       this.ipc = window.require('electron').ipcRenderer;
     }catch(e){
@@ -16,18 +16,26 @@ export class SignalsService {
     }
   }
 
-  public on(channel: string, listener: any): void {
+  public on(channel: string, listener: (...args: any[]) => void): void {
     if (!this.ipc) {
       return;
     }
-    this.ipc.on(channel, listener);
+    this.ipc.on(channel, (event, ...args) => {
+      this.ngZone.run(() => {
+        listener(event, ...args);
+      });
+    });
   }
 
-  public once(channel: string, listener: any): void {
+  public once(channel: string, listener: (...args: any[]) => void): void {
     if (!this.ipc) {
       return;
     }
-    this.ipc.once(channel, listener);
+    this.ipc.once(channel, (event, ...args) => {
+      this.ngZone.run(() => {
+        listener(event, ...args);
+      });
+    });
   }
 
   public send(channel: string, ...args: any[]): void {
